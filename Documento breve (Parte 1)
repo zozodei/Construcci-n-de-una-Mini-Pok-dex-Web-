@@ -1,0 +1,1 @@
+Las estruscutras de la URL las obtuvimos mediante la documentacion de la API, cada endpoint devuelve valores acorde con el parametro que le pasamos, por ejemplo si le mandamos un parametro de el nombre de un pokemon, nos devuelve por ejemplo las abilitys . Ante un error, no nos devuelve nada, solo un mensaje de que es incorrecto lo que pusimos o lo que solicitamos. 
