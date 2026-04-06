@@ -7,7 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- 1. BUSCADOR -->
+<div class="search-wrapper">
+  <div class="search-box">
+    <input id="textoBuscar"
+           type="text"
+           placeholder="Buscar..." />
+    <button id="botonBuscar">BUSCAR</button>
+  </div>
+</div>
+
+<!-- 2. LOADER (oculto por defecto) -->
+<div id="loader">
+  <div class="pokeball">
+    <div class="pokeball-line"></div>
+  </div>
+  <div class="loader-text">Buscando...</div>
+</div>
+
+<!-- 3. ERROR (oculto por defecto) -->
+<div id="error-msg">
+  <div class="err-title">¡No encontrado!</div>
+  <p id="error-text"></p>
+</div>
+
+<!-- 4. TARJETA (oculta por defecto) -->
+<div id="pokemon-card">
+  <div class="card-header">
+    <img id="pokemon-img" src="" alt="" />
+  </div>
+  <div class="card-body">
+    <div id="pokemon-id"></div>       <!-- Ej: #025 -->
+    <div id="pokemon-name"></div>     <!-- pikachu -->
+    <div id="pokemon-types"></div>    <!-- badges coloreados -->
+    <span id="pokemon-height"></span>   <!-- en metros -->
+    <span id="pokemon-weight"></span>   <!-- en kg -->
+  </div>
+</div>
     
-    
+
 </body>
 </html>
