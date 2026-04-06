@@ -1,0 +1,45 @@
+/* Variables de color */
+:root {
+  --bg:      #0d0f1a;
+  --card:    #1e2235;
+  --accent:  #f6c90e;   /* amarillo Pokémon */
+  --accent2: #e74c3c;   /* rojo Pokébola  */
+}
+
+/* Animación de la Pokébola */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.pokeball {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Tarjeta: entrada animada */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+#pokemon-card {
+  animation: slideUp .4s cubic-bezier(.22,1,.36,1);
+}
+
+/* Imagen flotante */
+@keyframes floatImg {
+  0%,100% { transform: translateY(0);    }
+  50%      { transform: translateY(-10px); }
+}
+.pokemon-img {
+  animation: floatImg 3s ease-in-out infinite;
+}
+
+/* Badges de tipos (color por JS) */
+.type-badge {
+  padding: 5px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  /* background se asigna desde JS */
+}
