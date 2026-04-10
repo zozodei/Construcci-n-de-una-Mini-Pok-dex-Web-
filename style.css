@@ -1,45 +1,142 @@
-/* Variables de color */
-:root {
-  --bg:      #0d0f1a;
-  --card:    #1e2235;
-  --accent:  #f6c90e;   /* amarillo Pokémon */
-  --accent2: #e74c3c;   /* rojo Pokébola  */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
-/* Animación de la Pokébola */
-@keyframes spin {
-  to { transform: rotate(360deg); }
+.search-wrapper {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  box-sizing: border-box;
 }
+
+.search-box {
+  display: flex;
+  gap: 10px;
+}
+
+.search-box input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-box button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+  background-color: #0056b3;
+}
+
+#loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
 .pokeball {
-  width: 64px; height: 64px;
+  width: 50px;
+  height: 50px;
+  border: 3px solid red;
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  position: relative;
+  animation: rotate 1.2s linear infinite;
+  margin-bottom: 10px;
 }
 
-/* Tarjeta: entrada animada */
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-#pokemon-card {
-  animation: slideUp .4s cubic-bezier(.22,1,.36,1);
-}
-
-/* Imagen flotante */
-@keyframes floatImg {
-  0%,100% { transform: translateY(0);    }
-  50%      { transform: translateY(-10px); }
-}
-.pokemon-img {
-  animation: floatImg 3s ease-in-out infinite;
+.pokeball::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border: 3px solid black;
+  border-radius: 50%;
+  background-color: white;
 }
 
-/* Badges de tipos (color por JS) */
-.type-badge {
-  padding: 5px 16px;
-  border-radius: 999px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #fff;
-  /* background se asigna desde JS */
+.pokeball-line {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 3px;
+  background-color: black;
+  transform: translateY(-50%);
+}
+
+.loader-text {
+  font-size: 16px;
+}
+
+#error-msg {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.err-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#resultado {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+#resultado img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+#nombre {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+
+#resultado p {
+  margin: 5px 0;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
